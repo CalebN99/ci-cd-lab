@@ -24,7 +24,7 @@ public class DiceTests {
         Dice die = new Dice(6, "Blue");
         assertAll(
                 () -> assertEquals(6, die.getSides()),
-                () -> assertEquals("blue", die.getColor())
+                () -> assertEquals("Blue", die.getColor())
         );
     }
 
