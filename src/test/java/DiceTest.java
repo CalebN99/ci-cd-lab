@@ -14,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @version 1.0
  * Dice Test class for jUnit5 tests
  */
-public class DiceTests {
+public class DiceTest {
 
     /**
      * jUnit test, testing constructor
      */
     @Test
-    public void constructorTest() {
+    public void testConstructor() {
         Dice die = new Dice(6, "Blue");
         assertAll(
                 () -> assertEquals(6, die.getSides()),
@@ -34,7 +34,7 @@ public class DiceTests {
      */
     @ParameterizedTest
     @ValueSource(ints = {6, 8, 12, 14, 16})
-    public void singleRollRangeTest(int sides) {
+    public void testSingleRollRange(int sides) {
         Dice die = new Dice(sides, "Blue");
         checkRange(sides, die.roll());
     }
@@ -43,7 +43,7 @@ public class DiceTests {
      * jUnit test, testing if all ints returned are in proper range
      */
     @RepeatedTest(5)
-    public void manyRollsRangeTest() {
+    public void testManyRollsRange() {
         final int totalRolls = 12;
         Dice die = new Dice(totalRolls, "Blue");
         int[] rolls = die.rollMany(10);
