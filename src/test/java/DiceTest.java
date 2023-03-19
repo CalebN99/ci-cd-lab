@@ -39,21 +39,21 @@ public class DiceTest {
         checkRange(sides, die.roll());
     }
 
-//    /**
-//     * jUnit test, testing if all ints returned are in proper range
-//     */
-//    @RepeatedTest(5)
-//    public void testManyRollsRange() {
-//        final int totalRolls = 12;
-//        Dice die = new Dice(totalRolls, "Blue");
-//        int[] rolls = die.rollMany(10);
-//
-//        assertTrue(rolls[0] >= 1);
-//        assertTrue(rolls[0] <= totalRolls);
-//        for (int i = 1; i < 10; i++) {
-//            checkRange(totalRolls, rolls[i]);
-//        }
-//    }
+    /**
+     * jUnit test, testing if all ints returned are in proper range
+     */
+    @RepeatedTest(5)
+    public void testManyRollsRange() {
+        final int totalRolls = 12;
+        Dice die = new Dice(totalRolls, "Blue");
+        int[] rolls = die.rollMany(10);
+
+        assertTrue(rolls[0] >= 1);
+        assertTrue(rolls[0] <= totalRolls);
+        for (int i = 1; i < 10; i++) {
+            checkRange(totalRolls, rolls[i]);
+        }
+    }
 
     private void checkRange(int high, int value) {
         assertTrue(value >= 1);
